@@ -1,6 +1,6 @@
 package com.DH.Checkpoint.Integrador.controller;
 
-import com.DH.Checkpoint.Integrador.dao.ProdutoDao;
+import com.DH.Checkpoint.Integrador.DTO.ProdutoDto;
 import com.DH.Checkpoint.Integrador.persistence.model.Produto;
 import com.DH.Checkpoint.Integrador.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,22 +19,22 @@ public class ProdutoController {
 
 
     @PostMapping
-    public ResponseEntity<Produto> createProduto(@RequestBody ProdutoDao produtoDao){
+    public ResponseEntity<Produto> createProduto(@RequestBody ProdutoDto produtoDto){
 
-        return ResponseEntity.ok(service.insert(produtoDao));
+        return ResponseEntity.ok(service.insert(produtoDto));
     }
     @GetMapping
-    public ResponseEntity<List<Produto>> selectProduto(){
+    public ResponseEntity<List<ProdutoDto>> selectProduto(){
 
         return ResponseEntity.ok(service.selectAll());
     }
     @GetMapping("/{id}")
-    public ResponseEntity<Produto> selectProdutoId(@PathVariable Integer id){
+    public ResponseEntity<ProdutoDto> selectProdutoId(@PathVariable Integer id){
 
         return ResponseEntity.ok(service.select(id));
     }
-    @GetMapping("categoria/produto/{id}")
-    public ResponseEntity<List<Produto>> selectProdtCateg(@PathVariable Integer id){
+    @GetMapping("categoria/{id}")
+    public ResponseEntity<List<ProdutoDto>> selectProdtCateg(@PathVariable Integer id){
 
         return ResponseEntity.ok(service.selectCategProdt(id));
     }

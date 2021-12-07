@@ -21,9 +21,9 @@ public class CategoriaService {
 
         return repository.save(categoria);
     }
-    public List<Categoria> selectAll(){
+    public List<String> selectAll(){
 
-        return repository.findAll();
+        return repository.tdsCategorias();
     }
 
 }

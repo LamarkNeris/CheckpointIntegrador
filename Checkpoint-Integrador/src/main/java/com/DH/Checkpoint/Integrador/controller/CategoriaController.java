@@ -24,7 +24,7 @@ public class CategoriaController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Categoria>> selectCategoria() {
+    public ResponseEntity<List<String>> selectCategoria() {
 
         return ResponseEntity.ok(service.selectAll());
     }

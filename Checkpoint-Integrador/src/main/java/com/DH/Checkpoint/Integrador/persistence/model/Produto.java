@@ -1,29 +1,20 @@
 package com.DH.Checkpoint.Integrador.persistence.model;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
 
 @Entity
 @Table
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-
 public class Produto {
 
     @Id
-    @SequenceGenerator(name = "produto_sequencia", sequenceName = "produto_sequencia", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "produto_sequencia")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
     private Double preco;
     private String descricao;
     private String imagem;
     @ManyToOne
-    @JoinColumn(name = "categoria_id")
     private Categoria categoria;
 
     public Produto(String nome, Double preco, String descricao, String imagem, Categoria categoria) {

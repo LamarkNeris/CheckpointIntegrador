@@ -1,6 +1,6 @@
-package com.DH.Checkpoint.Integrador.dao;
+package com.DH.Checkpoint.Integrador.DTO;
 
-public class ProdutoDao {
+public class ProdutoDto {
     private Integer id;
     private String nome;
     private Double preco;
