@@ -11,7 +11,7 @@ public class CorsConfiguration implements WebMvcConfigurer {
         public void addCorsMappings(CorsRegistry registry) {
             //liberando app cliente 1
             registry.addMapping("/**")
-                    .allowedOrigins("http://localhost:3000")
+                    .allowedOrigins("https://ctdiii-checkpoint-final.vercel.app/")
                     .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD", "TRACE", "CONNECT");
 
             //liberando app cliente 2

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping("categoria")
+@RequestMapping("categorias")
 public class CategoriaController {
 
     @Autowired
@@ -28,5 +28,4 @@ public class CategoriaController {
 
         return ResponseEntity.ok(service.selectAll());
     }
-
 }

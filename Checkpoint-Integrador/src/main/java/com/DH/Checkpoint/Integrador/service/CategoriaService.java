@@ -17,11 +17,12 @@ public class CategoriaService {
     private CategoriaRepository repository;
 
 
-    public Categoria insert(Categoria categoria){
+    public Categoria insert(Categoria categoria) {
 
         return repository.save(categoria);
     }
-    public List<String> selectAll(){
+
+    public List<String> selectAll() {
 
         return repository.tdsCategorias();
     }
